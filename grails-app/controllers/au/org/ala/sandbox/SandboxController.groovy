@@ -5,4 +5,8 @@ class SandboxController {
         def model = [existing: [:], reload: false]
         render view:'index', model: model
     }
+
+    def ping() {
+        response.sendError(201)
+    }
 }

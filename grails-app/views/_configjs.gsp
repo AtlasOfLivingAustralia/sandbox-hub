@@ -1,22 +1,18 @@
-<g:set var="sandboxUrl" value="${grailsApplication.config.sandbox.uiUrl}"></g:set>
-<r:script type="text/javascript" disposition="head">
+<script type="text/javascript">
     var SANDBOX_CONFIG = {
-        autocompleteColumnHeadersUrl: '${sandboxUrl}/dataCheck/autocomplete',
-        biocacheServiceUrl: '${grailsApplication.config.biocacheServiceUrl}',
-        chartOptionsUrl: '${sandboxUrl}/myDatasets/chartOptions',
-        deleteResourceUrl: '${sandboxUrl}/myDatasets/deleteResource',
-        getAllDatasetsUrl: '${sandboxUrl}/myDatasets/allDatasets',
-        getDatasetsUrl: '${sandboxUrl}/myDatasets/userDatasets',
-        keepaliveUrl: '${sandboxUrl}/dataCheck/ping',
-        loginUrl: '${grailsApplication.config.casServerLoginUrl}?service=${createLink(uri: '/', absolute: true)}',
-        parseColumnsUrl: '${sandboxUrl}/dataCheck/parseColumns',
-        processDataUrl: '${sandboxUrl}/dataCheck/processData',
-        reloadDataResourceUrl: '${sandboxUrl}/dataCheck/reload',
-        saveChartOptionsUrl: '${sandboxUrl}/myDatasets/saveChartOptions',
-        uploadCsvUrl: '${sandboxUrl}/dataCheck/uploadFile',
-        uploadToSandboxUrl: '${sandboxUrl}/dataCheck/upload',
-        uploadStatusUrl: '${sandboxUrl}/dataCheck/uploadStatus',
-        userId: '${u.userId()}',
-        roles:<u:roles />
-        };
-</r:script>
+        sandboxHubsWebappUrl: '${grailsApplication.config.biocache.baseURL}',
+        linkToSpatialPortal: '${(grailsApplication.config.preview.complete.linkToSpatialPortal ?: false) as Boolean}',
+        linkToDownload: '${(grailsApplication.config.preview.complete.linkToDownload ?: false) as Boolean}',
+        autocompleteColumnHeadersUrl: '${createLink(controller:'dataCheck', action:'autocomplete')}',
+        keepaliveUrl: '${createLink(controller: 'sandbox', action: 'ping')}',
+        parseColumnsUrl: '${createLink(controller:'dataCheck', action:'parseColumns')}',
+        processDataUrl: '${createLink(controller:'dataCheck', action:'processData')}',
+        reloadDataResourceUrl: '${createLink(controller:'dataCheck', action:'reload')}',
+        uploadCsvUrl: '${createLink(controller:'dataCheck', action:'uploadFile')}',
+        uploadToSandboxUrl: '${createLink(controller:'dataCheck', action:'upload')}',
+        uploadStatusUrl: '${createLink(controller:'dataCheck', action:'uploadStatus')}',
+        roles: <u:roles />,
+        dataTypeToolTip: '${raw(grailsApplication.config.dataTypeToolTip)}',
+        dataTypeRegEx: new RegExp('${raw(grailsApplication.config.dataTypeRegEx)}')
+    };
+</script>

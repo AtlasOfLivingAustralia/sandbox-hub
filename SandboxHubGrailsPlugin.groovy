@@ -8,14 +8,6 @@ class SandboxHubGrailsPlugin {
         "grails-app/views/error.gsp"
     ]
 
-    // TODO Fill in these fields
-    def title = "Sandbox Hub Plugin" // Headline display name of the plugin
-    def author = "Temi Varghese"
-    def authorEmail = ""
-    def description = '''\
-        Sandbox hub separates sandbox UI (angular app) from backend methods. This plugin will enable apps to include sandbox UI while committing data on a different server.
-    '''
-
     // URL to the plugin's documentation
     def documentation = "http://grails.org/plugin/sandbox-hub"
 

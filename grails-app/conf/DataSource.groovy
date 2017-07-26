@@ -1,3 +1,0 @@
-// environment specific settings
-environments {
-}
