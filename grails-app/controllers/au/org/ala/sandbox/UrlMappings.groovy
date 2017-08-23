@@ -8,8 +8,5 @@ class UrlMappings {
                 // apply constraints here
             }
         }
-
-        "/"(controller: "sandbox", view: "index")
-        "500"(view:'/error')
     }
 }
