@@ -7,6 +7,6 @@ class SandboxController {
     }
 
     def ping() {
-        response.sendError(201)
+        response.status = 201
     }
 }
